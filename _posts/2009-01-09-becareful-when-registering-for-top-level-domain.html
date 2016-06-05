@@ -1,0 +1,36 @@
+---
+layout: post
+title: Becareful when registering a "Top Level Domain"
+date: 2009-01-09 12:18:58.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- Blog
+- Thoughts
+tags: []
+meta:
+  aktt_notify_twitter: 'yes'
+  _podPressPostSpecific: a:6:{s:15:"itunes:subtitle";s:15:"##PostExcerpt##";s:14:"itunes:summary";s:15:"##PostExcerpt##";s:15:"itunes:keywords";s:17:"##WordPressCats##";s:13:"itunes:author";s:10:"##Global##";s:15:"itunes:explicit";s:2:"No";s:12:"itunes:block";s:2:"No";}
+  _edit_last: '16'
+  aktt_tweeted: '1'
+  dsq_thread_id: '186764249'
+author:
+  login: justin
+  email: justin@tech65.org
+  display_name: Justin Lee
+  first_name: Justin
+  last_name: Lee
+---
+<p>When my friend told me that he registered 4 Top Level Domain recently, I was quite excited about it. Top Level Domain is going to be the next big thing. <a href="http://news.bbc.co.uk/2/hi/technology/7475986.stm">ICANN had decided to open up the top level domain name registration</a> to just about anybody back in June 08. Top Level Domain, for the uninitiated, is the last part of the URL. (Example: .com or .org.) Which means you can register a TLD of just about anything. For example, you can register a .bank and create domains like citi.bank or blood.bank etc etc. Be prepared to see lots of fanciful domain names in the near future.</p>
+<p>But I was quite surprised that he managed to register for the TLD now. From what I understand, the application for TLD will only start in the 2nd quarter of 2009. So how did he manage to register a TLD?<!--more--></p>
+<p>He told me that he registered the TLD at <a href="http://tld.name/">TLD.NAME</a> at around US$1000 per domain. When I visit the site, the first weird thing that I notice is that the site is accredited & approved by the Internet Names Authorization & Information Center (INAIC), not <a href="http://www.icann.org/">Internet Corporation for Assigned Names and Numbers (ICANN)</a>. And INAIC's website is actually a .com site instead of a .org site. </p>
+<p>Something doesn't seems right here. I check with several friends and all of them confirm that TLD isn't open for registration yet. So what did my friend register? After some investigations and checking, NTT finally found out that this is in fact <a href="http://en.wikipedia.org/wiki/Alternative_DNS_root">alternative top level domain</a>.</p>
+<blockquote><p>The DNS root zone consists of pointers to authoritative DNS servers for Generic Top Level Domain (like .com and .net) and Country Code Top Level Domain zones (like .us, .uk, and .tv). A collection of "traditional" root servers independently operated by many organizations around the internet use a list of these domains which is managed by ICANN. Alternative roots typically include pointers to all of the TLD servers delegated by ICANN, as well as TLD servers for other top-level domains (like .new, .nic, and .web) which are not delegated by ICANN, but run by other independent organizations. Some, but not all, alt-roots are operated by the organizations which in turn manage these alternative TLDs.</p>
+<p>Alternative DNS roots can in general be divided into three groups: those run for idealistic or ideological reasons, those run as profit-making enterprises, and those run internally by an organization for its own use.</p></blockquote>
+<p>So in order for the alternative TLD, you will need your local ISP to support their Domain Name Server (DNS). In fact, TLD.NAME even got a whole section explaining the benefits of alternative TLD and how you can get your ISP to support the alternative TLD. But the biggest question is, why would your ISP want to support a DNS which is not approved by ICANN? If your ISP doesn't support their DNS, you cannot access your website thru your alternative TLD. </p>
+<p>Even if you managed to make your ISP support their DNS (I don't know how you can do it), it will only means that people who are using your ISP can access your alternative TLD. Those who are not using the same ISP as you still cannot access your alternative TLD. So you still need to convince the rest of the world to support their DNS. (Which is mission impossible)</p>
+<p>So is this alternative TLD considered a scam? The answer is no.</p>
+<p>The site clearly states that you need to get your ISP to support their DNS. If your ISP support their DNS, your TLD will work. But it didn't say that ISP will never support your TLD. It's like selling a Leopard Tank to you as a mode of transport. Now that you own the Leopard Tank, all you need is to get the government agency to give you approval to drive it on public road. (OK, I'm bad at analogy. But you get the point)</p>
+<p>And these alternative TLD is going to pose another big problem when ICANN opens up TLD for registration. The TLD that you registered with these alternative TLD registrar might be registered by another company. When this happens, it is only logical for all ISP to point their DNS to the TLD registered with ICANN.</p>
+<p>So be careful when you register any Top Level Domain. Make sure it is accredited & approved by ICANN. (In another word, make sure it's not an alternative Top Level Domain)</p>

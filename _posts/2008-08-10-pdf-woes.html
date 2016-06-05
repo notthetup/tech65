@@ -1,0 +1,37 @@
+---
+layout: post
+title: PDF woes
+date: 2008-08-10 21:45:26.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- Blog
+tags:
+- creator
+- editor
+- pdf
+- reader
+- windows
+meta:
+  aktt_notify_twitter: 'no'
+  _podPressPostSpecific: a:6:{s:15:"itunes:subtitle";s:15:"##PostExcerpt##";s:14:"itunes:summary";s:15:"##PostExcerpt##";s:15:"itunes:keywords";s:17:"##WordPressCats##";s:13:"itunes:author";s:10:"##Global##";s:15:"itunes:explicit";s:2:"No";s:12:"itunes:block";s:2:"No";}
+  _edit_last: '9'
+  dsq_thread_id: '186763693'
+author:
+  login: daniel
+  email: daniel@tech65.org
+  display_name: Daniel
+  first_name: Daniel
+  last_name: Tsou
+---
+<p>Since I'm almost always doing important "mission-critical" stuff on my Mac, the fact that <a href="http://developer.apple.com/referencelibrary/GettingStarted/GS_GraphicsImaging/">Quartz</a> operates in a manner that <a href="http://en.wikipedia.org/wiki/Quartz_(graphics_layer)#Use_of_PDF">parallels the PDF imaging model</a>, thus enabling the OS to intrinsically support PDF documents, has been a real lifesaver. The most obvious benefit is that virtually any application is able to <strong>print</strong> directly to a PDF file, even on a vanilla OS X installation. Good times.<br />
+In fact it's because of this wonderful OS-level support, that some developers were able to go over and beyond and come up with apps like <a href="http://skim-app.sourceforge.net/">Skim</a> & <a href="http://mekentosj.com/papers/">Papers</a> [free to try], which I find more endearing every single day.</p>
+<p>In Windows, industry-giant Adobe's Acrobat Reader is the best-known and most pervasive, distributed promiscuously at every opportunity. But for a long time now, Acrobat has consistently fallen short of my expectations. It takes too long to load up and has too many extraneous features that I briefly glimpse but have no use for and definitely don't use on a regular basis.<br />
+There's a very reliable PDF reader I've come to appreciate and that's <a href="http://www.foxitsoftware.com/pdf/reader_2/down_reader.htm"><strong>Foxit PDF Reader</strong></a>. It's nifty, unobtrusive, very quick and for me, good enough as an all-purpose PDF reader.</p>
+<p>However PDF "reading" isn't that much of a problem; no matter what Acrobat remains reliable [and free]. In Windows, it's PDF creation that is a big problem and rightly so. <a href="http://en.wikipedia.org/wiki/Portable_Document_Format">The advantages of using PDF are many</a>, and I find it a crying shame that the easiest installer for a PDF authoring program is one that you have to pay for: Adobe Acrobat Professional. There are few others that provide the capability but requires additional installs of Ghostscript or some such.<br />
+One miracle binary stood out from me and it's not surprisingly from the open source community. <a href="http://www.pdfforge.org/products/pdfcreator"><strong>PDFCreator</strong></a> is a program that's not really a program. Once installed, there is no standalone product per se, but basically any program that can print can now print to a virtual printer that outputs to a PDF file. The interface is transparent and idiot-proof and in my experience very very reliable. One additonal feature is that it allows multiple related PDFs to be merged.</p>
+<p>If quality and [free] PDF creation software was rare enough, good luck finding a PDF editor at a reasonable price *coughfreecough*. One might argue the wisdom of a PDF editor; PDFs are preferable where I come from because they are "unalterable", the next best thing to a hard copy.<br />
+But what the program really allows you to do isn't inline word processing, but rather breaks down the PDF into its layered components which you can manipulate with a GUI and/or special scripts. This allows for a quick and dirty rearrangment for nicer-looking prints. For special occasions only.<br />
+For this I find myself thankful to the Sourceforge community for <a href="http://sourceforge.net/project/showfiles.php?group_id=177354">PDFedit</a>. It does what it claims it can very well BUT involves the additonal "hassle" of requiring a native <a href="http://www.cygwin.com/">Cygwin</a> installation. For the uninitiated, Cygwin is a Linux environment for Windows.</p>
+<p>These three programs have made PDF management a whole lot easier in my Doze use. Hope it helps you guys too.</p>

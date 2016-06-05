@@ -1,0 +1,40 @@
+---
+layout: post
+title: Tersus Studio
+date: 2009-02-21 08:00:33.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- Blog
+- Thoughts
+tags:
+- development
+- open source
+- OSS-PAC
+- Tersus Studio
+- web
+- web technology
+- Web-app
+meta:
+  aktt_tweeted: '1'
+  aktt_notify_twitter: 'yes'
+  _podPressPostSpecific: a:6:{s:15:"itunes:subtitle";s:15:"##PostExcerpt##";s:14:"itunes:summary";s:15:"##PostExcerpt##";s:15:"itunes:keywords";s:17:"##WordPressCats##";s:13:"itunes:author";s:10:"##Global##";s:15:"itunes:explicit";s:2:"No";s:12:"itunes:block";s:2:"No";}
+  _edit_last: '2'
+  dsq_thread_id: '186199945'
+author:
+  login: daniel
+  email: daniel@tech65.org
+  display_name: Daniel
+  first_name: Daniel
+  last_name: Tsou
+excerpt: A quick review of a promising Web-app IDE, Tersus Studio.
+---
+<p><img src="{{ site.baseurl }}/assets/tersus.gif" alt="tersus" title="tersus" class="alignnone size-full wp-image-414" /><br />
+You know how the best Open-Source apps hardly get enough limelight because there are so many worthy apps in that category? The fact that these apps are free [as in beer, and as in speech] is the single most important factor, most of the time. <a title="Tersus Studio" href="http://www.tersus.com/">Tersus Studio</a> is an app I would've never come across if I hadn't gone to yesterday's OSS-PAC exhibition at the Grand Hyatt. Developed by a Israel-based company, Tersus is open-source, and thanks to those wonderful people at the booth, powerful as well.<br />
+<!--more--><br />
+Tersus is basically a GUI that enables the user to create Web-apps using simplistic visual flowchart-based methodology, without ever touching one line of code. The program is based on Eclipse, an IDE developed for the OSS-community. So it runs almost like an SDK, and if you're comfortable with navigating around Eclipse, it should take you "about an hour" [their words!] to get familiar with Tersus. One more thing, Tersus is written with a Java backbone, so Web-apps created with Tersus are also Java-based.</p>
+<p>The how is simple. Opening a new project in Tersus defaults to a blank screen. There seem to be two distinct parts to Web-app creation: end-user interface and server-side actions. Creating end-user interfaces is as easy as pie - just a matter of dragging textbox/table/grid icons from a Photoshop-like palette on the right into the canvas. Here these elements can be labelled and given some kind of RDF relevance. Tersus, when it compiles, will automatically render these as XHTML-compliant code, that also look consistent. I opine that CSS will easily take care of the design of these fields, and I'm sure they have some taxonomy and custom classes that CSS-users can easily style with.</p>
+<p>But we all know creating the end-user interface is technically easier than the backend of it. Getting users to fill up a form is way easier than managing that information automatically - sending it to a database for storage and retrieving it easily and safely etc. Here's where Tersus shines. Getting data to store in a database [which has yet to be created!] is a simple matter of dragging a database block onto the canvas, creating fields in the new block, and then linking the text-fields to the database fields using arrows! I don't know about you, but for me that was a "ZOMG. ORLY? YARLY!" moment. Many common SQL queries/actions are supported out of the box, all in the form of draggable icons. And if advanced SQL queries are needed, Tersus allows these to be coded manually *and* saved for future use.</p>
+<p>Beyond all this, what was impressive was the sense of scale achievable. Simple Web-apps could just be a mailing list form, but complex ones [like a e-commerce registration + buying] require many conditionals and many inputs so to speak. When new blocks are created in Tersus, it zooms into them, thus allowing each block to have its own coplex hierarchy of data. Zooming out is as simple as clicking outside the block, and you are instantly back at the bigger picture. This, I suspect, will simplify a lot Web-app production issues, because the reductionist methodology has proven to be very thorough and manageable.</p>
+<p>We saw many nice apps at OSS-PAC, like Clonezilla, Opentaho etc, but really it was Tersus that stood out for me. I know I'll definitely find an opportunity to tinker with and deploy it on my own domain. <a title="Tersus Studio" href="http://www.tersus.com/">Tersus Studio</a>, I reiterate, is open source and downloadable at <a title="Download Tersus Studio" href="http://www.tersus.com/?Id=14">this location</a>. The app itself has a friendly 2-minute guide to get started, and some sample applications to see Tersus in action. The website also offers simple apps for download.</p>

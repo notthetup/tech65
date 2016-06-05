@@ -1,0 +1,45 @@
+---
+layout: post
+title: Lenovo RapidDrive Technology
+date: 2010-02-03 12:00:51.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- Blog
+tags:
+- lenovo
+- solid state drives
+meta:
+  aktt_notify_twitter: 'yes'
+  _edit_last: '2'
+  _podPressPostSpecific: a:6:{s:15:"itunes:subtitle";s:15:"##PostExcerpt##";s:14:"itunes:summary";s:15:"##PostExcerpt##";s:15:"itunes:keywords";s:17:"##WordPressCats##";s:13:"itunes:author";s:10:"##Global##";s:15:"itunes:explicit";s:2:"No";s:12:"itunes:block";s:2:"No";}
+  aktt_tweeted: '1'
+  dsq_thread_id: '186506372'
+author:
+  login: justin
+  email: justin@tech65.org
+  display_name: Justin Lee
+  first_name: Justin
+  last_name: Lee
+---
+<p>When Lenovo announced this new RapidDrive Technology that they've been working on during CES 2010, I was scoffed it off as another hybrid SSD + HDD implementation that wasn't anything interesting. That is until I read up more about it from possibly Lenovo's only article that talks about the technology in-depth - <a href="http://shop.lenovo.com/SEUILibrary/controller/e/na/LenovoPortal/en_US/special-offers.workflow:ShowPromo?LandingPage=/All/US/Sitelets/Enhanced%20Experience/Consumer%20news">Introducing RapidDrive technology</a>. I realized it wasn't really just some cheap implementation that uses <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0">RAID 0 striping</a> combining both physical drive into 1 "logical" drive, but possibly some interesting optimizations built on top of it to bring out the full potential of an SSD and HDD hybrid. <!--more--></p>
+<h6>Results of RapidDrive Technology</h6>
+<p>Here are the visible results of this RapidDrive Technology, taken from the <a href="http://lenovoblogs.com/">Lenovo Blogs</a> - <a href="http://lenovoblogs.com/insidethebox/?p=384">Inside the Box</a>. Pictured are two Y560 systems.  The one of the left has RapidDrive.  The one on the right has a standard HDD.  Otherwise, both are identically configured.  A simple script shows loading a series of programs and how much extra speed the RapidDrive can provide.</p>
+<p><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/6_KWyT5rgR8&hl=en_US&fs=1&rel=0" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed src="http://www.youtube.com/v/6_KWyT5rgR8&hl=en_US&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object></p>
+<p>As you can see, the system with the RapidDrive finishes in about 13 seconds, but the system without takes almost 30 seconds. This is about up to 66% increase in speed.</p>
+<h6>How does RapidDrive Technology work?</h6>
+<p>I'm sure you can find many places that tells you how this RapidDrive technology will benefit you as a consumer. That's not my purpose in writing this article. I want to understand how this RapidDrive technology works, and how it can potentially be different from other hybrid technologies that tries to do the same.</p>
+<p>Currently the configuration is as follows: Lenovo Y460 and Y560 will offer SSD options of 32 gig and 64 gig alongside with a 500 gig HDD option (configurations might vary). The SSD will be using a PCI-E internal expansion connector, and the HDD will be connected using the normal SATA connection. When you view the physical storage on Windows 7, you will only see 1 seamless partition for both drives instead of 2 separate partitions for each drive. This means that you don't have to worry about where to put your files, be it SSD or HDD, this RapidDrive technology will decide for you.</p>
+<h6>Where are files stored in the SSD?</h6>
+<p>Based on Lenovo's current software design, all the key files required for PC boot up and large calculation (paging files) will be stored on the SSD. By storing the key OS files on the SSD, Lenovo PCs enable more enhanced performance overall, even if the SSD is filled and data is being store on HDD. Windows 7 system files and the paging file is located on the SSD which takes up the first 15 to 17 gigs of the total SSD drive. That leaves about 15 gigs remaining on the 32 gig SSD drive, or 47 gigs remaining on the 64 gig SSD drive.</p>
+<h6>What happens after the SSD gets filled up?</h6>
+<p>Currently the software is designed to store files first on SSD then HDD after the SSD storage is filled. But the core system files and paging files (for virtual memory usage) are stored on the SSD in order to achieve an overall enhancement on performance. This is only the first stage in their software development and Lenovo will continue to improve the system capability in terms of intelligent loading depending on file size and usage.</p>
+<h6>So where is my System Recovery partition located?</h6>
+<p>The system recovery partition is hidden in the last partition of the HDD, which is not part of the combined SSD and HHD of the large C Partition. So the user just needs to use Lenovo's "OneKey Rescue System" to restore their entire system and will not require special system tasks compared to non-RapidDrive systems. Users can still customize their partition if they choose to, but to maximize RapidDrive performance, the OS and necessary system files should be hosted on the C partition to benefit from the faster performance of the SSD.</p>
+<h6>Can I install another OS and/or repartition my drives?</h6>
+<p>The system does enable user to customize their partition as they choose to, however, changing the standard setup of the system, such as installing dual OS will affect the performance consistency of RapidDrive and security of your data.</p>
+<h6>Does this RapidDrive technology only work on Windows 7?</h6>
+<p>Currently, only Windows 7 "Enhanced Experience" by Lenovo is supported.</p>
+<h6>Summary</h6>
+<p>So there you have it. Lenovo has taken up the mantle from IBM and continued to innovate their PC brand, not only providing the ultimate hardware experience, but also new ways to bring more value to consumers with their software "Enhanced Experience". I hope that answers most of your questions about RapidDrive technology because those questions were exactly what I wanted to know. Special thanks to Derrick Koh, Lenovo’s communications manager for the ASEAN region, for providing me with the answers.</p>

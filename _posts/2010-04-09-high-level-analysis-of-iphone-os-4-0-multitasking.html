@@ -1,0 +1,58 @@
+---
+layout: post
+title: High-Level Analysis of iPhone OS 4.0 Multitasking
+date: 2010-04-09 12:49:32.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- Blog
+- Thoughts
+tags:
+- apple
+- iphone
+meta:
+  aktt_notify_twitter: 'yes'
+  _edit_last: '20'
+  _podPressPostSpecific: a:6:{s:15:"itunes:subtitle";s:15:"##PostExcerpt##";s:14:"itunes:summary";s:15:"##PostExcerpt##";s:15:"itunes:keywords";s:17:"##WordPressCats##";s:13:"itunes:author";s:10:"##Global##";s:15:"itunes:explicit";s:2:"No";s:12:"itunes:block";s:2:"No";}
+  aktt_tweeted: '1'
+  dsq_thread_id: '186766921'
+author:
+  login: justin
+  email: justin@tech65.org
+  display_name: Justin Lee
+  first_name: Justin
+  last_name: Lee
+---
+<p><a href="http://www.apple.com/iphone/preview-iphone-os/"><img class="alignnone" src="{{ site.baseurl }}/assets/iphone-os-preview-hero20100407.png" alt="iPhone OS 4.0" /></a></p>
+<p>Apple recently announced <a href="http://gizmodo.com/5512656/how-multitasking-works-in-the-new-iphone-os">iPhone OS 4.0 enabling "multitasking"</a> of a sorts. I want to dig slightly deeper into understanding what they actually mean by this "multitasking", without talking too much about the nitty gritty details.</p>
+<p>There are 7 kinds of "services" they expose for multitasking:</p>
+<ul>
+<li>Background Audio</li>
+<li>Voice over IP</li>
+<li>Background Location</li>
+<li>Push Notifications</li>
+<li>Local Notifications</li>
+<li>Task Completion</li>
+<li>Fast App Switching</li>
+</ul>
+<p>Among all 7 "services" exposed, 6 of them are somewhat already available in the system itself, one way or another, with hidden APIs not exposed for public developer usage. Let's take a look at each of them, and how they might "save battery" without "slowing down the system".</p>
+<p><!--more--></p>
+<h6>Background Audio</h6>
+<p>The background audio is simply what the iTunes application already does, which is to play audio in the background without having the iTunes application open. This simply means they just expose what iPhone can already do to developers. This does not make any changes to slowing down the system in any way, since people have been using the iTunes application to play background music since the first iteration of the iPhone and iPod Touch. However, understand that the application does not remain open at all, only a small portion of the "application" remains streaming the music.</p>
+<h6>Voice over IP</h6>
+<p>Voice services has been around ever since the beginning of the iPhone (duh?!?) with the Phone application, running constantly in the background to "receive" calls. This, in fact, is also not a full fledged application at all, but a small part of code that "reacts" to an action by the OS (namely the voice service) to load up the application and "receive" the action to do something about it.</p>
+<h6>Background Location</h6>
+<p>Similarly with the voice service, it is simply a "reaction" or a "response" to an action that the OS has prompted, in this case, your GPS or Wifi location based services. This is probably one of the things that will drain your battery pretty quickly, since these services do take a lot of resources. However, since the control lies with the OS of how and when to serve up this reaction and NOT the application that decides to take over your entire GPS and Wifi location based services into their hands and drain your battery dry, the OS will probably have some battery consideration when location is required, hopefully not letting the application go rogue.</p>
+<h6>Push Notifications</h6>
+<p>What can I say? It's been done, and been available since the last iPhone OS 3.0 release. I think it's just put here for good measure. Once again, it is a "reaction" and not true multitasking.</p>
+<h6>Local Notifications</h6>
+<p>This is simply the same thing as your "scheduled task" or "timer" for those familiar with the terminologies. This, too, isn't having your entire application open, but simply just a small part of it that you register to a scheduler to run it when required.</p>
+<h6>Task Completion</h6>
+<p>This is slightly interesting because it isn't a "reaction" to something, but letting a "thread", "process", or keeping with this post's terminology "a small part of the app" running in the background, and when that finishes it just automatically closes the application. This has potential for having a rogue application that simply just continuously have an infinite loop to keep the application open. I'm curious to find out how much is exposed, or only certain services like "downloading" and "uploading" are available.</p>
+<h6>Fast App Switching</h6>
+<p>This is ALSO not true multitasking, where the application once lost focus will save its state, close itself, and not "run" at all. Only after reopening, the state is restored, and the application is once resumed again. So in fact, anything running will have to be resumed, for example connection to the internet and so on. This means that it does not actually continue to run at all. However, with what was covered in the previous 6 ways of multitasking, you can very well achieve seamless "multitasking" with "Task Completion", "Local Notifications" and so on.</p>
+<h6>Summary</h6>
+<p>What does this all mean? Steve Jobs has redefined what multitasking actually means and converted the meaning to a consumer terminology. Consumers do not want true multitasking, but a pseudo-version of it with all the benefits of multitasking, and also the benefits of a fast and responsive OS. But does this mean that developers will have more to worry about, trying to work around what's available to them to create a seamless so-called "multitasking" application? Most of what Apple has announced isn't anything new at all to the iPhone OS, it is simply just exposing it with a tight grip, disallowing developers to go rogue.</p>
+<p>Do note that all this right now is speculation based on what makes sense to me until I actually see the SDK.</p>
+<p>Source: <a href="http://www.justinlee.sg/2010/04/09/high-level-analysis-of-iphone-os-4-0-multitasking/">JustinLee.SG - High-Level Analysis of iPhone OS 4.0 Multitasking</a></p>

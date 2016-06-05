@@ -1,0 +1,64 @@
+---
+layout: post
+title: Google Chrome
+date: 2008-09-03 11:23:16.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- Blog
+tags:
+- asynchrous
+- browser
+- chrome
+- Google
+- innovative
+- javascript
+- new
+- process-driven
+- tabs
+- v8
+- web technology
+meta:
+  aktt_notify_twitter: 'yes'
+  _edit_last: '9'
+  aktt_tweeted: '1'
+  _podPressPostSpecific: a:6:{s:15:"itunes:subtitle";s:15:"##PostExcerpt##";s:14:"itunes:summary";s:15:"##PostExcerpt##";s:15:"itunes:keywords";s:17:"##WordPressCats##";s:13:"itunes:author";s:10:"##Global##";s:15:"itunes:explicit";s:2:"No";s:12:"itunes:block";s:2:"No";}
+  dsq_thread_id: '186763762'
+author:
+  login: daniel
+  email: daniel@tech65.org
+  display_name: Daniel
+  first_name: Daniel
+  last_name: Tsou
+---
+<p><a href="http://www.google.com/chrome">Chrome</a> is Google's latest product and it's in beta [hurhur] for now. <a href="http://www.google.com/googlebooks/chrome/#">The need for Google to write its own browser is explained here</a> and they clearly state that they're happy to let other developers take visual and idea cues from this project to work on their own browsers.</p>
+<p>The installer is a measly 427kb and takes all of 2 seconds to install. It automatically copies over any relevant Firefox bookmarks, preferences etc so there is no loss of productivity fom the get go. I'll come out and say it right here and now, Chrome is NOT a pretty thing [for now]. The lack of polish is frighteningly obvious, and the over-simplistic design is likely to put off a lot of people. Maybe it's just me, what with being too attached to Opera.</p>
+<h4>Main features</h4>
+<ol class="serif">
+<li><a href="#paradigm">Written from the ground up for the new ways in which we use the Web.</a></li>
+<li>A fresh new way to think of tabs</li>
+<li><a href="#process">Among the innovations are new ways of memory handling, basically each tab and each type of request is handled as a separate process</a></li>
+<li>A task manager for web browsers - with info on memory-intensive tabs and plugins[!!]</li>
+<li>Asynchrous JS + auto-timeout killing = SWEET</li>
+<li><a href="#jscript">The new v8 JS VM</a></li>
+<li>An ingenious way to prevent memory bloat as a direct result of #2</li>
+<li>Advanced security and NO popups, thanks to #2</li>
+<li><a href="#gears">Google Gears built in</a></li>
+<li>Debugged and code-tested with Google's infrastructure on the top sites surfed by audiences worldwide</li>
+<li>Btw, where are the ads? [yeah I'm pleasantly surprised.]</li>
+</ol>
+<p>The decision to <strong>reinvent the browser</strong> is commendable. Google is right to say the level of sophistication we see in web apps today weren't even dreamt of when the Internet and the first browsers came out so what we need is new code that handles such tranmissions uniquely [and better].<br />
+I haven't actually done speedtests [I don't know how] but Chrome is zippy. <strike>It's almost as fast as <a href="http://webkit.org/" class="bold">WebKit</a></strike> it uses WebKit, the same engine that powers Safari and we know how fast WebKit really is. </p>
+<p><span id="process"><strong>Tabs have been completely reworked</strong> in that previously, they just served as a convenience of loading different pages within one window, reducing the need to switch around. In Chrome however, tabs are windows in their own right and can be dragged off to form a new window. What this means is conceptually powerful. [Isn't this a WebKit feature?]<br />
+The address bar is within each tab, and it's also the search bar. Whatever you do within the tab is independent of the rest of the browser.</p>
+<p><strong>Since each tab also means a new process, any one process or page hanging will not theoretically hang other tabs.</strong><br />
+The fact that every tab and request is process driven helps in the the security aspect because these "processes" not unlike desktop apps can be artifically nerfed to become sandboxed with only limited/minimal/zero rights to the HDD etc. This inherently makes browsing more secure in that even if harmful code is accidentally run, it cannot touch your data in any way. That said, plugins work outside the sandbox in a sense, and they may be insecure. Google has tried to stop this by making sure plugin code also runs in a spearate process but I guess this must be a continual battle against good and evil, as hackers will definitely try to circumvent the protections, and developers will work hard to secure all bases.</span></p>
+<p>When other search engines or services are used eg Amazon, Facebook, Piratebay etc, their search handler shortcuts are <strong>automatically</strong> added. In a tribute to Opera, these new search engines can be searched with a keyword [tab] search+query easily.<br />
+Opera got Speed Dial right, but Chrome takes it further. In Chrome the user's favourite sites will be listed on the main page and the sidebar will list the most used search engines. There is no need for customisation and these lists are automatically populated. I guess it'd be nice if there were customisation options though.</p>
+<p><span id="paradigm">And finally, in a bid to fulfil one of the mission statements, <strong>Chrome offers the ability to bookmark webapp pages</strong> like GMail etc as a "Chrome application" with its own icon on the desktop. When these are clicked, they load Chrome without the address bar and browser buttons etc, so it's just like a desktop app, not unlike Prism and Adobe AIR, except it's built into the browser. Pretty powerful stuff if you use it right.</span></p>
+<p><span id="jscript"><strong>The v8 VM for javascript is exciting.</strong> The mere fact that JS is loaded and executed independent of the HTTP request means no waiting time while content is loading.. javascript enhancements will just load in their own time. Other VMs have been done before, but v8 is in a class of its own in that it doesn't parse and interpret and then run semantically. It parses, compiles and runs directly. No interpretations. This is the equivalent of speaking to your Japanese friends with the help of a translator vs speaking to them directly in Japanese. Also there is dynamic allocation of classes, ie hidden clases, for the variables and classes and objects called by javascript. In a very general sense, it's like adding small tags to bookmark certain points in the code to call that part of the code faster than parsing all the way from the top each time. Especially useful in longer loops I guess.<br />
+The garbage collection gets a overhaul mainly because v8 keeps track of the "address" of all variables/classes/objects as well that values they contain as well independently. As such, there will be no confusion if the number 15 is staying at house 15 for example. The "memory" for addresses also means that when these variables are no longer needed, the entire address can be bulldozed, not just the occupants.<br />
+The most amazing part about all this is...v8 is independent and freee for use in EVERY browser. Google Chrome uses it in the same way as a plugin, by means of an API, and that means any browser can as well. Fingers crossed for Opera.</span></p>
+<p><span id="gears">Having <strong>Google Gears built in</strong> makes Chrome preferable to Mozilla software with Gears plugin for accessing GMail and Google Docs for now. If you recall, the Google Gears API serves as a offline cache so that services that use it can be run even offline. The "files" that are created reside on the HDD until the next time you go online, at which time they auto-sync with the online storage and service. If you use Google Gears a lot, then you will know just how much this boosts productivity.</span></p>
+<p>Again, Chrome is an ugly duckling for now, I really don't like the pretty bland windows. Coming from the Mac camp, the lack of minimum amount of visual appeal is not a sight for sore eyes. However the code is powerful and it's open source. Google is actively inviting developers to take their code and run with it; so if Google really means for Chrome to be a "framework" for browsers to come, then I can't wait to see what the future holds.</p>
